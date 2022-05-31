@@ -150,7 +150,11 @@ main {
   background: var(--backgroud-color);
 }
 
-.informacao {
+#informacao {
+  margin-bottom: 7.8rem;
+}
+
+#informacao p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -158,10 +162,8 @@ main {
   line-height: 23px;
   text-align: center;
   color: black;
-
-  margin-bottom: 7.8rem;
 }
 
-.informacao p:first-child {
+#informacao p:first-child {
   font-weight: 700;
 }
