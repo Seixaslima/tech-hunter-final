@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1180e6;
+  --backgroud-color: #f2890d;
+  --text-color: black;
+  --box-color: #b0a3a3;
+  --header-width: 25.8rem;
+  font-size: 62.5%;
+}
+
+.button {
+  text-align: center;
+
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: 20rem;
+  height: 4.2rem;
+  border: 0.3rem solid black;
+  border-radius: 2rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/* ##################  BODY  ####################### */
+body {
+  background: var(--backgroud-color);
+  font-family: 'Squada One', cursive;
+}
+
+/* ##################  HEADER  ####################### */
+
+header {
+  width: var(--header-width);
+  position: absolute;
+  left: calc(50% - calc(var(--header-width) / 2));
+  margin-top: 6.6rem;
+  z-index: 100;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 400;
+  line-height: 7.4rem;
+  text-transform: uppercase;
+
+  padding: 3.8rem 4.8rem;
+  background: var(--primary-color);
+  border-radius: 2rem;
+}
+
+/* ##################  MAIN  ####################### */
+
+main {
+  background: white;
+  width: 32rem;
+  margin-inline: auto;
+  border-radius: 2rem;
+  padding-top: 7.5rem;
+  transform: translateY(calc(6.6rem + 7.5rem));
+  display: flex;
+  flex-direction: column;
+}
+
+/* ##################  JOGADOR  ####################### */
+
+.jogador {
+  padding-left: 1rem;
+}
+
+.boneco {
+  width: 15rem;
+  height: 15rem;
+  margin-inline: auto;
+}
+
+.jogador label {
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.jogador input,
+.jogador select {
+  width: 30rem;
+  height: 3.2rem;
+  margin-bottom: 5.9rem;
+}
+
+.jogador .button {
+  margin-bottom: 12.1rem;
+  background: var(--primary-color);
+}
+
+/* ##################  JOGO  ####################### */
+
+#jogo {
+  padding: 0 1rem;
+  visibility: hidden;
+}
+
+#jogo.jogando {
+  visibility: visible;
+}
+
+.saldacao {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-align: center;
+  margin-bottom: 3.3rem;
+}
+
+#jogo label {
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  color: black;
+  margin-bottom: 1.9rem;
+}
+
+#jogo input {
+  width: 30rem;
+  height: 4.2rem;
+  margin-bottom: 5.4rem;
+}
+
+#jogo .button {
+  margin-bottom: 5.4rem;
+  background: var(--backgroud-color);
+}
+
+.informacao {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: black;
+
+  margin-bottom: 7.8rem;
+}
+
+.informacao p:first-child {
+  font-weight: 700;
+}
