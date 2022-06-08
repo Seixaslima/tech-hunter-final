@@ -1,33 +1,38 @@
 var numeroSecreto
-var tentativas
-var vitoria
-var nomeJogador
+var tentativas = 0
+var vitoria = false
+var nomeJogador = ''
+var jogando = false
+var nivel
 
 function comecar() {
   nomeJogador = document.getElementById('nickname').value
-  let nivel = document.getElementById('dificuldade').value
+  nivel = document.getElementById('dificuldade').value
   if (nomeJogador == '') return
-
-  let jogo = document.getElementById('jogo')
-  jogo.classList.add('jogando')
 
   let mensagem = document.getElementById('saldacao')
   mensagem.innerHTML =
     `<p>Olá <strong>${nomeJogador}</strong>, vamos jogar!</p>` +
     `<p>De acordo com a opção de intervalo que você escolheu, descubra o número.!</p>`
+
+  let aviso = document.getElementById('informacao')
+  aviso.innerHTML = ''
   location.href = '#jogo'
-  if (nivel == 1) {
-    numeroSecreto = Math.floor(Math.random() * 10) + 1
-  } else if (nivel == 2) {
-    numeroSecreto = Math.floor(Math.random() * 100) + 1
-  } else if (nivel == 3) {
-    numeroSecreto = Math.floor(Math.random() * 200) + 1
-  }
+
+  numeroSecreto = Math.floor(Math.random() * nivel) + 1
+
   tentativas = 3
   vitoria = false
+  jogando = true
 }
 
 function jogar() {
+  if (!jogando) {
+    location.href = '#jogador'
+
+    return
+  }
+
   if (vitoria) {
     venceu()
     return
@@ -38,6 +43,7 @@ function jogar() {
   }
 
   let valorChutado = document.getElementById('numeroEscolhido').value
+
   if (valorChutado == numeroSecreto) {
     vitoria = true
     venceu()
@@ -53,12 +59,15 @@ function jogar() {
 
 function venceu() {
   let aviso = document.getElementById('informacao')
-  aviso.innerHTML = `<p>Parabéns ${nomeJogador} você acertou</p>`
+  aviso.innerHTML = `<p>Parabéns ${nomeJogador} você acertou</p>
+  <p>Aperte em Começar para jogar novamente<p>`
 }
 
 function perdeu() {
   let aviso = document.getElementById('informacao')
-  aviso.innerHTML = `<p>${nomeJogador} você perdeu</p>`
+  aviso.innerHTML = `<p>${nomeJogador} você perdeu</p>
+  <p>O numero secreto era: ${numeroSecreto}<p>
+  <p>Aperte em Começar para jogar novamente<p>`
 }
 
 function errou(valorChutado) {
